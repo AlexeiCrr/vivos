@@ -1,0 +1,651 @@
+@charset "utf-8";
+
+/**** CSS Variables ****/
+
+/** use variables in css property like, background-color: var(--primary-color); */
+:root {
+	/* --- color variables --- */
+	--sand-white: #FBF7EA;
+	--golden-hour: #E8D092;
+	--warm-bronze: #A28527;
+	--baby-poo: #786118;
+	--hope-blue: #68D7EE;
+	--dusk-blue: #1B5E6C;
+	--night-sky: #031A1F;
+	--background-primary-dark: #04232A;
+	--background-primary-mid: #052930;
+	--background-primary-light: #05313A;
+	--background-secondary-dark: #02151A;
+	--background-secondary-mid: #031A1F;
+	--background-secondary-light: #042026;
+	--text-primary: var(--sand-white);
+	--text-highlight: var(--hope-blue);
+	--text-muted: var(--dusk-blue);
+	--text-link: var(--golden-hour);
+	--vertical-gradient: linear-gradient(to bottom, var(--background-primary-dark), var(--background-secondary-mid));
+	--text-shadow: 0px 0px 15px #68D7EE66;
+}
+
+@font-face {
+	font-family: 'Georgia';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Georgia Regular'), url('../fonts/georgia.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Novecento';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Novecento'), url('../fonts/novecento.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Argon';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Argon'), url('../fonts/argon.otf') format('opentype');
+}
+
+/* -=- Common Element CSS Start -=- */
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+::-moz-selection {
+	background: var(--text-highlight);
+	text-shadow: none;
+}
+
+::selection {
+	background: var(--text-highlight);
+	text-shadow: none;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+html,
+body {
+	margin: 0px;
+	padding: 0px;
+	font-size: 16px;
+	line-height: 20px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--background-secondary-dark);
+}
+
+img {
+	border: 0px !important;
+	outline: none;
+	width: 100%;
+	max-width: 100%;
+	display: block;
+}
+
+ul,
+ol {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+/* A elements that don't have a class get default styles */
+/* a:not([class]) {
+	text-decoration-skip-ink: auto;
+	color: currentColor;
+} */
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+a:hover,
+a:focus,
+a:active,
+a:visited {
+	outline: none;
+	text-decoration: none;
+}
+
+.btn:focus,
+.btn.focus,
+.form-control:hover,
+.form-control:focus,
+.form-control:focus:Active {
+	outline: none !important;
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
+p {
+	margin: 0px;
+	font-size: 20px;
+	line-height: 32px;
+	color: var(--text-primary);
+	font-weight: normal;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+textarea {
+	resize: none;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+p,
+a {
+	font-family: 'Georgia', sans-serif;
+}
+
+a {
+	color: var(--hope-blue);
+}
+
+p {
+	font-size: 20px;
+	line-height: 32px;
+	color: var(--text-primary);
+	font-weight: normal;
+}
+
+/*** Heading CSS ***/
+h1,
+.h1 {
+	font-family: 'Novecento', sans-serif;
+	font-size: 50px;
+	line-height: 56px;
+	color: var(--sand-white);
+}
+
+h2,
+.h2 {
+	font-family: 'Novecento', sans-serif;
+	font-size: 30px;
+	line-height: 36px;
+	color: var(--sand-white);
+}
+
+h3,
+.h3 {}
+
+h4,
+.h4 {}
+
+h5,
+.h5 {}
+
+h6,
+.h6 {}
+
+/* Common Class CSS related to text alignment*/
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.d-flex {
+	display: flex;
+}
+.d-inline-block {
+	display: inline-block;
+}
+.align-items-center {
+	align-items: center;
+}
+.justify-content-center {
+	justify-content: center;
+}
+.justify-content-between {
+	justify-content: space-between;
+}
+.justify-content-around {
+	justify-content: space-around;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.mt-24 {
+	margin-top: 24px!important;
+}
+
+.mb-40 {
+	margin-bottom: 40px;
+}
+
+.mr-40 {
+	margin-right: 40px;
+}
+.ml-40 {
+	margin-left: 40px;
+}
+
+.mb-60 {
+	margin-bottom: 60px;
+}
+
+.mr-16 {
+	margin-right: 16px;
+}
+
+.mb-16 {
+	margin-bottom: 16px;
+}
+
+.w-auto {
+	width: auto;
+}
+
+.w-50 {
+	width: 50%;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+.separator {
+	color: var(--text-muted);
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+.fancy-title {
+	font-family : 'Argon', sans-serif;
+	font-size: 50px;
+	line-height: 56px;
+	color: var(--hope-blue);
+	text-shadow: 0px 0px 15px #68D7EE66;
+}
+
+a.golden-link {
+	font-size: 20px;
+	color: var(--golden-hour);
+	text-decoration: underline;
+}
+
+/* -=- Header CSS -=- */
+header {}
+
+/* -=- Footer CSS -=- */
+footer {}
+
+/* -=- Main Area CSS -=- */
+main {}
+
+.site-logo {
+	font-family: "Argon", sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	color: var(--hope-blue)
+}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.header {
+	background-color: var(--background-primary-mid);
+	padding: 20px 0;
+	box-shadow: 0px 4px 20px 0px var(--background-primary-mid);
+	position: sticky;
+	top: 0;
+	z-index: 20;
+}
+
+.nav-area {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-link {
+	font-size: 20px;
+	line-height: 20px;
+	color: var(--text-primary);
+	font-weight: normal;
+	text-transform: uppercase;
+	margin: 0 24px;
+	font-family: 'Novecento', sans-serif;
+	transition: color 0.3s ease-in-out;
+}
+
+.nav-link:first-of-type {
+	margin-left: 0;
+}
+
+.nav-link:last-of-type {
+	margin-right: 0;
+}
+
+.nav-link:is(:hover, :focus,:active) {
+	color: var(--text-highlight);
+}
+
+.section-one,.section-three, .footer {
+	position: relative;
+	min-height: 50vh;
+	padding-top: 180px;
+	padding-bottom: 180px;
+	background-image: var(--vertical-gradient);
+}
+
+.content-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.section-one__background {
+	position: absolute;
+	background-image: url('../img/hero-image.jpg');
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.2;
+	z-index: 1;
+	background-size: cover;
+	background-position: center;
+}
+
+.section-one__content, .section-three__content, .footer__content {
+	width: 46%;
+	position: relative;
+	z-index: 2;
+}
+
+.section-one__content-header, .section-three__content-header, .footer__content-header {
+	margin-bottom: 40px;
+}
+
+
+.section-two {
+	padding: 120px 0;
+	background-image: var(--vertical-gradient)
+}
+
+.section-two__header {
+	display:flex;
+	margin-bottom: 80px;
+}
+
+.section-two .decorative-line {
+	max-width: 28%;
+}
+
+.section-two .video {
+	margin-bottom: 120px;
+}
+
+.section-two__content-header {
+	font-size: 50px;
+	line-height: 60px;
+	color: var(--text-muted);
+	text-align: center;
+}
+
+.section-two__content {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-left: -60px;
+	margin-right: -60px;
+}
+
+.section-two__content-column {
+	width: calc(100% / 3 - 60px);
+	margin: 0 60px;
+	position: relative;
+}
+
+.section-two__content-column:nth-of-type(2):before {
+	content: '';
+	position:absolute;
+	display: block;
+	width: 1px;
+	height: 230px;
+	left: -60px;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: var(--dusk-blue);
+}
+
+.section-two__content-column:nth-of-type(2):after {
+	content: '';
+	position:absolute;
+	display: block;
+	width: 1px;
+	height: 230px;
+	right: -60px;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: var(--dusk-blue);
+}
+
+.section-three__background {
+	position: absolute;
+	background-image: url('../img/hero-image.jpg');
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.2;
+	z-index: 1;
+	background-size: cover;
+	background-position: center;
+}
+
+.section-four {
+	padding: 120px 0;
+
+}
+.section-four__content-header{
+	margin-bottom: 120px;
+}
+
+.section-four__header {
+	display:flex;
+}
+
+.section-four__content-item {
+	display: flex;
+	justify-content: flex-start;
+	alignt-items:flex-start;
+	margin-bottom: 60px;
+}
+
+.section-four__content-item .text {
+	max-width: 45%;
+}
+
+.accordion {
+	margin-bottom: 120px;
+}
+
+.accordion-item {
+	margin-bottom:0;
+  transition: all 0.3s ease;
+}
+
+.accordion-item--expanded {
+	margin-bottom: 40px;
+}
+
+.accordion-content {
+  height: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.accordion-header {
+	cursor: pointer;
+	position: relative;
+	padding: 12px 0;
+}
+
+.arrow-icon {
+	width: 15px;
+	position: absolute;
+	left: -40px;
+	top: 50%;
+	transform: translateY(-50%) rotate(180deg);
+	transition: all 0.3s ease;
+}
+
+.accordion-item--expanded .arrow-icon {
+	transform: translateY(-50%) rotate(0deg);
+}
+
+.decorative-line {
+	position: relative;
+	width: 50%;
+	height: 2px;
+	background-color: var(--hope-blue);
+	margin-top: 45px;
+	opacity: 0.2;
+}
+
+.decorative-line::before, .decorative-line::after {
+	content: '';
+	display: block;
+	width: 60px;
+	height: 2px;
+	background-color: var(--hope-blue);
+	position: absolute;
+	top: 0;
+}
+
+.decorative-line--right::before, .decorative-line--right::after {
+	right: 0;
+}
+
+.decorative-line::before {
+	top: -4px;
+}
+
+.decorative-line::after {
+	top: -8px;
+}
+
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.language-switch {
+	color: var(--text-muted);
+}
+
+.language-switch.active {
+	color: var(--text-primary);
+}
+
+.embed-container embed,
+.embed-container iframe,
+.embed-container object {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* -=- Keyframe CSS -=- */
+
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion */
+@media (prefers-reduced-motion) {}
+
+/****** Responsive CSS Start ******/
+
+@media only screen and (min-width: 1200px) {
+	/* Add style according to viewports size */
+}
+
+/****** Responsive CSS End ******/
