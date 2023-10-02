@@ -17,10 +17,10 @@
 
     <title>Vivos</title>
     <!-- Favicon Included -->
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="icon" type="image/png" href="./../img/favicon.png">
+    <link rel="manifest" href="./../img/site.webmanifest">
     <!-- Main Stylesheet Included -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="./../css/style.css">
   </head>
 
   <body>
@@ -29,19 +29,43 @@
       <div class="container">
         <div class="nav-area">
           <h1 class="site-logo">VIVOS</h1>
-          <nav class="nav">
-            <a href="#" class="nav-link">Der Bedarf</a>
-            <a href="#" class="nav-link">Gemeinschaft</a>
-            <a href="#" class="nav-link">inspirieren</a>
-            <a href="#" class="nav-link">befähigen</a>
-            <a href="#" class="nav-link">vernetzen</a>
+          <nav class="nav desktop-nav">
+            <a href="#section-one" class="nav-link">Der Bedarf</a>
+            <a href="#section-two" class="nav-link">Gemeinschaft</a>
+            <a href="#section-three" class="nav-link">inspirieren</a>
+            <a href="#section-four" class="nav-link">befähigen</a>
+            <a href="#section-five" class="nav-link">vernetzen</a>
           </nav>
+          <div class="mobile-menu-button">
+            <img src="./../img/arrow.svg" alt="arrow svg icon" class="arrow-icon">
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <nav class="nav">
+          <a href="#section-one" class="nav-link">Der Bedarf</a>
+          <a href="#section-two" class="nav-link">Gemeinschaft</a>
+          <a href="#section-three" class="nav-link">inspirieren</a>
+          <a href="#section-four" class="nav-link">befähigen</a>
+          <a href="#section-five" class="nav-link">vernetzen</a>
+        </nav>
+        <div class="contact-info">
+          <p class="mb-60">Sag
+            <a href="mailto:hallo@vivos.md" class="golden-link">hallo@vivos.md</a>
+          </p>
+          <div>
+            <a href="/?lang=de" class="language-switch language-german">Deutsch</a>
+            <span class="separator">
+              |
+            </span>
+            <a href="/?lang=en" class="language-switch language-english">English</a>
+          </div>
         </div>
       </div>
     </header>
     <!-- Body Section -->
     <main>
-      <section class="section-one">
+      <section class="section-one" id="section-one">
         <div class="section-one__background"></div>
         <div class="container">
           <div class="content-wrapper">
@@ -61,7 +85,7 @@
           </div>
         </div>
       </section>
-      <section class="section-two">
+      <section class="section-two" id="section-two">
         <div class="container">
           <div class="section-two__header">
             <h1 class="fancy-title mr-16">gemeinschaft</h1>
@@ -105,7 +129,7 @@
           </div>
         </div>
       </section>
-      <section class="section-three">
+      <section class="section-three" id="section-three">
         <div class="section-three__background"></div>
         <div class="container">
           <div class="content-wrapper">
@@ -128,7 +152,7 @@
           </div>
         </div>
       </section>
-      <section class="section-four">
+      <section class="section-four" id="section-four">
         <div class="container">
           <div class="section-four__content-header">
             <div class="section-four__header">
@@ -147,24 +171,24 @@
           </div>
           <div class="section-four__content">
             <div class="section-four__content-item">
-              <h2 class="no-wrap">kinder betreuung</h2>
+              <h2 class="no-wrap mb-16">kinder betreuung</h2>
               <div class="decorative-line ml-40 mr-40 mt-24"></div>
               <p class="text">Wir bieten Grundausbildungen für Betreuungspersonal an, welche sich lose am dualen Schweizer Ausbildungsmodell orientieren. Um Synergien und Ressourcen effizient zu nutzen, spannen wir mit anderen Organisation zusammen.</p>
             </div>
             <div class="section-four__content-item">
-              <h2 class="no-wrap">gemeinschaft</h2>
+              <h2 class="no-wrap mb-16">gemeinschaft</h2>
               <div class="decorative-line ml-40 mr-40 mt-24"></div>
               <p class="text">Bei
                 <a href="">VIVOS</a>
                 erproben wir einfache, kostengünstige Möglichkeiten um Gemeinschaft zu leben. Die Erkenntnisse bereiten wir einfach verständlich auf und bieten sie allen an, die in das Wohlergehen ihres Dorfes investieren.</p>
             </div>
             <div class="section-four__content-item">
-              <h2 class="no-wrap">teenager</h2>
+              <h2 class="no-wrap mb-16">teenager</h2>
               <div class="decorative-line ml-40 mr-40 mt-24"></div>
               <p class="text">Wir bieten im Zentrum Kurse und Aktivitäten für Teenager an. Zudem schaffen wir für die lokale Bevölkerung eine Plattform um selber ihre eigene Passion an die nächste Generation weitergeben und dabei einen kleinen Nebenverdienst aufzubauen.</p>
             </div>
             <div class="section-four__content-item">
-              <h2 class="no-wrap">macher</h2>
+              <h2 class="no-wrap mb-16">macher</h2>
               <div class="decorative-line ml-40 mr-40 mt-24"></div>
               <p class="text">
                 <span class="d-inline-block mb-16">Wir beteiligen uns an der lokalen Community mit Workshops und Meet-Ups.</span>
@@ -177,85 +201,85 @@
 
     </main>
     <!-- Footer Section -->
-      <footer class="footer">
-        <div class="container">
-          <div class="content-wrapper">
-            <div class="decorative-line decorative-line--right"></div>
-            <div class="footer__content">
-              <div class="footer__content-header">
-                <h1 class="fancy-title">zusammen</h1>
-                <h1>geht es einfacher</h1>
-              </div>
-              <p class="mb-40">Teilst du unsere Vision?Wir sind auf der Suche nach zuverlässigen Partnern.</p>
-              <div class="accordion">
-                <div class="accordion-item">
-                  <div class="accordion-header">
-                    <img src="img/arrow.svg" alt="arrow svg icon" class="arrow-icon">
-                    <h2>Expertise und networking</h2>
-                  </div>
-                  <div class="accordion-content">
-                    <p>
-                      Hast du etwas Ähnliches gemacht? Kennst du Menschen,die sich für dieses Thema interessieren?
-                    </p>
-                    <a class="golden-link" href="#">
-                      Wir möchten mit dir sprechen
-                    </a>
-                  </div>
+    <footer class="footer" id="section-five">
+      <div class="container">
+        <div class="content-wrapper">
+          <div class="decorative-line decorative-line--right"></div>
+          <div class="footer__content">
+            <div class="footer__content-header">
+              <h1 class="fancy-title">zusammen</h1>
+              <h1>geht es einfacher</h1>
+            </div>
+            <p class="mb-40">Teilst du unsere Vision?Wir sind auf der Suche nach zuverlässigen Partnern.</p>
+            <div class="accordion">
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <img src="./../img/arrow.svg" alt="arrow svg icon" class="arrow-icon">
+                  <h2>Expertise und networking</h2>
                 </div>
-                <div class="accordion-item">
-                  <div class="accordion-header">
-                    <img src="img/arrow.svg" alt="arrow svg icon" class="arrow-icon">
-
-                    <h2>ausbildung</h2>
-                  </div>
-                  <div class="accordion-content">
-                    <p>Seid ihr bereits in der Ausbildung von Betreuungspersonal oder im Community-Bau tätig?</p>
-                    <a class="golden-link" href="#">Vielleicht finden wir Synergien?</a>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header">
-                    <img src="img/arrow.svg" alt="arrow svg icon" class="arrow-icon">
-
-                    <h2>Finanzierung</h2>
-                  </div>
-                  <div class="accordion-content">
-                    <p>Soziale Wirkung ist nicht umsonst. Kannst duunser Team unterstützen oder Ausrüstung spenden?</p>
-                    <a class="golden-link" href="#">
-                      Lass uns über die Möglichkeiten sprechen
-                    </a>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header">
-                    <img src="img/arrow.svg" alt="arrow svg icon" class="arrow-icon">
-
-                    <h2>Für uns Arbeiten</h2>
-                  </div>
-                  <div class="accordion-content">
-                    <p>Übernimmst du Verantwortung für die Zukunft der Republik Moldau? Keine formale Ausbildung erforderlich. Wenn du den Wunsch und die Einstellung mitbringst, werden wir dir die nötige Ausbildung zukommen lassen.</p>
-                    <a class="golden-link" href="https://tally.so/r/wzy5q0" target="_blank">
-                      Teile deine Geschichte mit uns
-                    </a>
-                  </div>
+                <div class="accordion-content">
+                  <p>
+                    Hast du etwas Ähnliches gemacht? Kennst du Menschen,die sich für dieses Thema interessieren?
+                  </p>
+                  <a class="golden-link" href="#">
+                    Wir möchten mit dir sprechen
+                  </a>
                 </div>
               </div>
-              <p class="mb-60">Sag
-                <a href="mailto:hallo@vivos.md">hallo@vivos.md</a>
-              </p>
-              <div>
-                <a href="/?lang=de" class="language-switch language-german">Deutsch</a>
-                <span class="separator">
-                  |
-                </span>
-                <a href="/?lang=en" class="language-switch language-english">English</a>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <img src="./../img/arrow.svg" alt="arrow svg icon" class="arrow-icon">
+
+                  <h2>ausbildung</h2>
+                </div>
+                <div class="accordion-content">
+                  <p>Seid ihr bereits in der Ausbildung von Betreuungspersonal oder im Community-Bau tätig?</p>
+                  <a class="golden-link" href="#">Vielleicht finden wir Synergien?</a>
+                </div>
               </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <img src="./../img/arrow.svg" alt="arrow svg icon" class="arrow-icon">
+
+                  <h2>Finanzierung</h2>
+                </div>
+                <div class="accordion-content">
+                  <p>Soziale Wirkung ist nicht umsonst. Kannst duunser Team unterstützen oder Ausrüstung spenden?</p>
+                  <a class="golden-link" href="#">
+                    Lass uns über die Möglichkeiten sprechen
+                  </a>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <img src="./../img/arrow.svg" alt="arrow svg icon" class="arrow-icon">
+
+                  <h2>Für uns Arbeiten</h2>
+                </div>
+                <div class="accordion-content">
+                  <p>Übernimmst du Verantwortung für die Zukunft der Republik Moldau? Keine formale Ausbildung erforderlich. Wenn du den Wunsch und die Einstellung mitbringst, werden wir dir die nötige Ausbildung zukommen lassen.</p>
+                  <a class="golden-link" href="https://tally.so/r/wzy5q0" target="_blank">
+                    Teile deine Geschichte mit uns
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p class="mb-60">Sag
+              <a href="mailto:hallo@vivos.md" class="golden-link">hallo@vivos.md</a>
+            </p>
+            <div>
+              <a href="/?lang=de" class="language-switch language-german">Deutsch</a>
+              <span class="separator">
+                |
+              </span>
+              <a href="/?lang=en" class="language-switch language-english">English</a>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
     <!-- Custom Js Included -->
-    <script src="js/index.js"></script>
+    <script src="../js/index.js"></script>
   </body>
 
 </html>
