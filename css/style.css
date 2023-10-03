@@ -348,6 +348,10 @@ a.golden-link {
 	text-decoration: underline;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 /* -=- Header CSS -=- */
 header {}
 
@@ -406,7 +410,7 @@ main {}
 	margin-right: 0;
 }
 
-.nav-link:is(:hover, :focus,:active) {
+.nav-link:is(:hover, .focused) {
 	color: var(--text-highlight);
 }
 
@@ -561,6 +565,7 @@ main {}
   height: 0;
   opacity: 0;
   transition: all 0.3s ease;
+	overflow: hidden;
 }
 
 .accordion-header {
