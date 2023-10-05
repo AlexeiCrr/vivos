@@ -3,7 +3,7 @@ name: 🚀 Deploy to dev.vivos.md on push to dev branch
 on: 
   push:
     branches:
-      - dev
+      - master
 
 jobs:
   web-deploy:
@@ -17,5 +17,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: sl76.web.hostpoint.ch
-        username: dev@vivos.md
-        password: ${{ secrets.ftp_password_dev }}
+        username: master@vivos.md
+        password: ${{ secrets.ftp_password_master }}
