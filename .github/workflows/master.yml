@@ -1,4 +1,4 @@
-name: 🚀 Deploy to dev.vivos.md on push to dev branch
+name: 🚀 Deploy to vivos.md on push to master branch
 
 on: 
   push:
