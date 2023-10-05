@@ -1,9 +1,9 @@
-name: 🚀 Deploy to dev.vivos.md on push to dev branch
+name: 🚀 Deploy to dev.vivos.md on push to develop branch
 
 on: 
   push:
     branches:
-      - dev
+      - develop
 
 jobs:
   web-deploy:
