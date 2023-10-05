@@ -336,14 +336,11 @@ h6,
 
 .fancy-title {
 	font-family : 'Argon', sans-serif;
-	font-size: 50px;
-	line-height: 56px;
 	color: var(--hope-blue);
 	text-shadow: 0px 0px 15px #68D7EE66;
 }
 
 a.golden-link {
-	font-size: 20px;
 	color: var(--golden-hour);
 	text-decoration: underline;
 }
@@ -799,6 +796,23 @@ main {}
 	}
 	.accordion {
 		margin-left: 40px;
+	}
+	h1,
+	.h1,
+	.section-two__content-header {
+		font-size: 42px;
+		line-height: 48px;
+
+		font-size: clamp(26px, 10vw, 42px);
+		line-height: clamp(30px, 12vw, 48px);
+	}
+	h2,
+	.h2 {
+		font-size: 26px;
+		line-height: 30px;
+
+		font-size: clamp(20px, 5vw, 26px);
+		line-height: clamp(24px, 7vw, 30px);
 	}
 }
 
