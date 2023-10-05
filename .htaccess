@@ -4,9 +4,8 @@ RewriteBase /
 
 
 # Rewrite www.vivos.md -> vivos.md
-RewriteCond %{HTTP_HOST} .
-RewriteCond %{HTTP_HOST} !^vivos\.md [NC]
-RewriteRule (.*) http://vivos.md/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} www\.vivos\.md [NC]
+RewriteRule (.*) https://vivos.md/$1 [R=301,L]
 
 
 
@@ -17,9 +16,8 @@ RewriteRule (.*) https://vivos.md/$1 [R=301,L]
 
 
 # Rewrite based on browser language
-#RewriteEngine on
 RewriteCond %{HTTP:Accept-Language} (de) [NC]
-RewriteRule ^$ http://vivos.md/de [R,L]
+RewriteRule ^$ /de/ [R,L]
 
 RewriteCond %{HTTP_HOST} vivos\.md [NC]
-RewriteRule ^$ http://vivos.md/en/ [R,L]
+RewriteRule ^$ /en/ [R,L]
