@@ -1,0 +1,21 @@
+name: 🚀 Deploy to dev.vivos.md on push to dev branch
+
+on: 
+  push:
+    branches:
+      - dev/
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: sl76.web.hostpoint.ch
+        username: dev@vivos.md
+        password: ${{ secrets.ftp_password }}
