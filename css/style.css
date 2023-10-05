@@ -811,8 +811,8 @@ main {}
 		font-size: 26px;
 		line-height: 30px;
 
-		font-size: clamp(20px, 5vw, 26px);
-		line-height: clamp(24px, 7vw, 30px);
+		font-size: clamp(20px, 7vw, 26px);
+		line-height: clamp(24px, 9vw, 30px);
 	}
 }
 
