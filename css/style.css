@@ -25,6 +25,16 @@
 	--light-gradient: linear-gradient(to bottom, var(--background-primary-dark) 0%, var(--background-primary-mid) 20%, var(--background-primary-mid) 80%, var(--background-primary-light) 100%);
 	--dark-gradient: linear-gradient(to bottom, var(--background-secondary-dark) 0%, var(--background-secondary-mid) 20%, var(--background-secondary-mid) 80%, var(--background-secondary-light) 100%);
 	--text-shadow: 0px 0px 15px #68D7EE66;
+
+	/* --- grid --- */
+	--grid-base: 8px;
+	--grid-xs : 4px;
+	--grid-s : 16px;
+	--grid-m : 24px;
+	--grid-l : 40px;
+	--grid-xl : 60px;
+	--grid-xxl : 120px;
+	--grid-xxxl : 240px;
 }
 
 @font-face {
@@ -149,7 +159,7 @@ a:visited {
 }
 
 p {
-	margin: 0px;
+	margin: 0 0 var(--grid-s) 0;
 	font-size: 20px;
 	line-height: 32px;
 	color: var(--text-primary);
@@ -222,6 +232,10 @@ h1,
 	font-family: 'Novecento', sans-serif;
 	font-size: 50px;
 	line-height: 56px;
+
+	font-size: clamp(30px, 5vw, 50px);
+	line-height: clamp(34px, 112%, 56px);
+
 	color: var(--sand-white);
 }
 
