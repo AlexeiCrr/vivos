@@ -16,8 +16,8 @@ RewriteBase /
 
 
 # Rewrite based on browser language
-RewriteCond %{HTTP:Accept-Language} (de) [NC]
-RewriteRule ^$ /de/ [R,L]
+# RewriteCond %{HTTP:Accept-Language} (de) [NC]
+# RewriteRule ^$ /de/ [R,L]
 
-RewriteCond %{HTTP_HOST} vivos\.md [NC]
-RewriteRule ^$ /en/ [R,L]
+# RewriteCond %{HTTP_HOST} vivos\.md [NC]
+# RewriteRule ^$ /en/ [R,L]
