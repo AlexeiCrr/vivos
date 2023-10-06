@@ -11,8 +11,8 @@ RewriteRule (.*) https://vivos.md/$1 [R=301,L]
 
 # Rewrite secure requests properly to prevent SSL cert warnings, e.g. prevent 
 # https://www.domain.md when your cert only allows https://secure.domain.md
-RewriteCond %{SERVER_PORT} !^443
-RewriteRule (.*) https://vivos.md/$1 [R=301,L]
+# RewriteCond %{SERVER_PORT} !^443
+# RewriteRule (.*) https://vivos.md/$1 [R=301,L]
 
 
 # Rewrite based on browser language
