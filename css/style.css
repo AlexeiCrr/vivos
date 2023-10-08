@@ -442,11 +442,13 @@ h6,
 
 
 /* ### HEADER ############################################# */
-.site-logo {
+.site-logo,
+.site-logo a {
 	font-family: "Argon", sans-serif;
 	font-size: 20px;
 	line-height: 20px;
-	color: var(--hope-blue)
+	color: var(--hope-blue);
+	text-decoration: none;
 }
 
 .header {
