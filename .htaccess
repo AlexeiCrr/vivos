@@ -1,23 +1,17 @@
-# redirect based on browser language
 RewriteEngine On
 RewriteBase /
 
-
-# Rewrite www.vivos.md -> vivos.md
-# RewriteCond %{HTTP_HOST} www\.vivos\.md [NC]
-# RewriteRule (.*) https://vivos.md/$1 [R=301,L]
-
-
-
 # Rewrite secure requests properly to prevent SSL cert warnings, e.g. prevent 
-# https://www.domain.md when your cert only allows https://secure.domain.md
-# RewriteCond %{SERVER_PORT} !^443
-# RewriteRule (.*) https://vivos.md/$1 [R=301,L]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{SERVER_PORT} !^443
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,NE,R=302]
 
+# Rewrite vivos.md -> www.vivos.md (preserves subdomains, eg. dev.vivos.md)
+RewriteCond %{HTTP_HOST} ^vivos\.md [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,NE,R=302]
 
-# Rewrite based on browser language
-# RewriteCond %{HTTP:Accept-Language} (de) [NC]
-# RewriteRule ^$ /de/ [R,L]
-
-# RewriteCond %{HTTP_HOST} vivos\.md [NC]
-# RewriteRule ^$ /en/ [R,L]
+# redirect based on browser language
+RewriteCond %{HTTP:Accept-Language} (de) [NC]
+RewriteRule ^$ /de/ [R,L]
+# fallback to english
+RewriteRule ^$ /en/ [R,L]
