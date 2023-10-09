@@ -333,7 +333,8 @@ a {
 
 /*** Heading CSS ***/
 h1,
-.h1 {
+.h1,
+.section-two__content-header {
 	font-size: 50px;
 	line-height: 56px;
 
@@ -655,10 +656,9 @@ h6,
 }
 
 .section-two__content-header {
-	font-size: 50px;
-	line-height: 60px;
 	color: var(--text-muted);
 	text-align: center;
+	margin-bottom: var(--grid-xxl);
 }
 
 .section-two__content {
@@ -677,7 +677,7 @@ h6,
 	display: block;
 	height: min(30vh, 150px);
 	width: min(50vw, 200px);
-	margin-bottom: var(--grid-l);
+	margin-bottom: var(--grid-xl);
 	border: 1px solid var(--hope-blue);
 	border-radius: 100%;
 }
@@ -704,6 +704,9 @@ h6,
 
 
 
+	.section-two__content-header {
+		margin-bottom: var(--grid-xl);
+	}
 	.section-two__content {
 		grid-template-columns: 1fr;
 		row-gap: var(--grid-xl);
@@ -715,6 +718,7 @@ h6,
 	.section-two__content-icon {
 		margin-left: auto;
 		margin-right: auto;
+		margin-bottom: var(--grid-l);
 	}
 }
 
