@@ -12,6 +12,8 @@
 	--night-sky: #031A1F;
 	--background-primary-dark: #04232A;
 	--background-primary-mid: #052930;
+	--background-primary-mid-95: rgba(5,41,48, .95);
+	--background-primary-mid-0: rgba(5,41,48, 0.1);
 	--background-primary-light: #05313A;
 	--background-secondary-dark: #02151A;
 	--background-secondary-mid: #031A1F;
@@ -24,7 +26,7 @@
 	--dark-gradient: linear-gradient(to bottom, var(--background-secondary-dark) 0%, var(--background-secondary-mid) 20%, var(--background-secondary-mid) 80%, var(--background-secondary-light) 100%);
 	--text-shadow: 0px 0px 15px #68D7EE66;
 
-	/* --- Typography --- */
+	/* --- typography --- */
 	--font-text: 'Georgia';
 	--font-title: 'Novecento';
 	--font-highlight: 'Argon';
@@ -38,6 +40,10 @@
 	--grid-xl: 60px;
 	--grid-xxl: 120px;
 	--grid-xxxl: 240px;
+
+	/* --- header --- */
+	--header-padding-v: var(--grid-m);
+	--header-open-animation-duration: .7s;
 }
 
 @font-face {
@@ -442,23 +448,16 @@ h6,
 
 
 /* ### HEADER ############################################# */
-.site-logo,
-.site-logo a {
-	font-family: "Argon", sans-serif;
-	font-size: 20px;
-	line-height: 20px;
-	color: var(--hope-blue);
-	text-decoration: none;
-}
-
-.header {
-	background-color: var(--background-primary-mid);
-	padding: 20px 0;
-	box-shadow: 0px 4px 20px 0px var(--background-primary-mid);
-	position: sticky;
+.nav-bar {
+	position: fixed;
 	top: 0;
-	z-index: 20;
+	left: 0;
+	right: 0;
+	z-index: 40;
 	overflow: hidden;
+	padding: 0;
+	background-color: var(--background-primary-mid);
+	box-shadow: 0px 4px 20px 0px var(--background-primary-mid);
 }
 
 .nav-area {
@@ -467,6 +466,16 @@ h6,
 	align-items: center;
 }
 
+.site-logo {
+	font-family: "Argon", sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	padding: var(--header-padding-v) 0;
+	color: var(--hope-blue);
+	text-decoration: none;
+}
+
+/* --- desktop -- */
 .nav-link {
 	color: var(--text-primary);
 	font-size: 20px;
@@ -475,6 +484,7 @@ h6,
 	text-transform: uppercase;
 	text-decoration: none;
 	margin: 0 var(--grid-s);
+	padding: var(--header-padding-v) 0;
 	font-family: 'Novecento', sans-serif;
 	transition: color 0.3s ease-in-out;
 }
@@ -491,66 +501,77 @@ h6,
 	color: var(--text-highlight);
 }
 
-@media only screen and (min-width: 768px) {
+/* --- mobile --- */
+.mobile-nav {
+	position: fixed;
+	width: 100vw;
+	max-height: 100vh;
+	overflow: auto;
+	left: 0;
+	top: -120vh;
+	z-index: 30;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: linear-gradient(to top, var(--background-primary-mid-0), var(--background-primary-mid-95) var(--grid-l));
+	transition: top var(--header-open-animation-duration) cubic-bezier(0,1.19,.39,1.02);
+}
 
+.mobile-nav--visible {
+	top: 0;
+}
+
+.mobile-nav nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100%;
+	margin: var(--grid-xxl) 0;
+}
+.mobile-nav .contact-info {
+	margin-bottom: var(--grid-m);
+}
+.mobile-nav .language-switch-nav {
+	margin-bottom: var(--grid-xxl);
+}
+
+.mobile-nav .nav-link {
+	margin: 0;
+	padding: 0;
+	transition: padding .6s ease-in-out;
+}
+.mobile-nav--visible .nav-link {
+	padding: var(--header-padding-v) 0;
+}
+
+.mobile-nav .contact-info {
+	text-align: center;
+}
+
+.mobile-menu-button {
+	padding: var(--header-padding-v) 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.mobile-menu-button--open .arrow-icon {
+	transform: rotate(0deg);
+}
+
+/* 1000px -> mobile nav is also for tablets */
+@media only screen and (min-width: 1001px) {
 	.mobile-nav,
 	.mobile-menu-button {
 		display: none;
 	}
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1000px) {
 	.desktop-nav {
 		display: none;
-	}
-
-	.mobile-nav {
-		position: fixed;
-		width: 100vw;
-		height: 70vh;
-		left: 0;
-		background-color: var(--background-primary-mid);
-		box-shadow: 0px 100px 100px 78px var(--background-primary-mid);
-		padding: 80px 0;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		top: -100vh;
-		transition: top 0.3s ease-in-out;
-	}
-
-	.mobile-nav--visible {
-		top: 60px;
-	}
-
-	.mobile-nav nav {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
-		height: 100%;
-		margin-bottom: 80px;
-	}
-
-	.mobile-nav .nav-link {
-		margin-left: 0;
-		margin-right: 0;
-		margin: 20px 0;
-	}
-
-	.mobile-nav .contact-info {
-		text-align: center;
-	}
-
-	.mobile-menu-button {
-		padding: 10px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.mobile-menu-button--open .arrow-icon {
-		transform: rotate(0deg);
 	}
 }
 
