@@ -24,8 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	const getLanguages = () => {
-		const params = new URLSearchParams(window.location.search);
-		const language = params.get('lang');
+		const language = window.location.pathname.split('/')[1];
 		if (language === 'en') {
 			document.querySelector('html').setAttribute('lang', 'en');
 			document.querySelectorAll('.language-english').forEach(link => link.classList.add('active'));
