@@ -432,6 +432,7 @@ h6,
 	position: relative;
 	flex-grow: 1;
 	flex-shrink: 1;
+	min-width: 60px;
 	height: 2px;
 	background-color: var(--hope-blue);
 	opacity: 0.2;
@@ -791,6 +792,15 @@ section.dark-background {
 .section-four .content-column {
 	/* Optically align with title */
 	margin-top: 4px;
+}
+
+@media only screen and (max-width: 1100px) {
+	.section-four .content-wrapper .decorative-line {
+		display: none;
+	}
+	.section-four .content-column {
+		margin-top: 0;
+	}
 }
 
 @media only screen and (max-width: 767px) {
