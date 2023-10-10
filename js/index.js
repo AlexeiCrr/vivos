@@ -91,21 +91,36 @@ document.addEventListener("DOMContentLoaded", function() {
 			// rotate the svg inside mobile menu button
 			mobileMenuButton.classList.toggle('mobile-menu-button--open');
 		});
+	}
 
+	const getMobileNavHighlight = () => {
 		const mobileMenuLinks = document.querySelectorAll('.mobile-nav a[href^="#"]');
+		const mobileMenu = document.querySelector('.mobile-nav');
+
+		const options = {
+			root: null,
+			rootMargin: '-50px 0px -50px 0px',
+			threshold: 0.1
+		};
+		const sections = document.querySelectorAll('section');
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const sectionId = entry.target.getAttribute('id');
+					const navLink = document.querySelector(`.mobile-nav a[href="#${sectionId}"]`);
+					mobileMenuLinks.forEach(link => link.classList.remove('focused'));
+					navLink.classList.add('focused');
+				}
+			});
+		}, options);
+
+		sections.forEach(section => observer.observe(section));
+
 		mobileMenuLinks.forEach(link => {
 			link.addEventListener('click', () => {
-
-				mobileMenuLinks.forEach(link => link.classList.remove('focused'));
-
-				setTimeout(() => {
-					link.classList.add('focused');
-				}, 10);
 				mobileMenu.classList.remove('mobile-nav--visible');
-
 			});
 		});
-
 	}
 
 	// Highlight active section in navigation
@@ -149,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	getLanguages();
 	animateScroll();
 	getMobileMenu();
+	getMobileNavHighlight();
 	getNavHighlight();
 	preventBodyScroll();
 });
