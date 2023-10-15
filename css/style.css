@@ -728,6 +728,98 @@ section.dark-background {
 	background-image: url('../img/hero-image.jpg');
 }
 
+.word-slider-container {
+	display: inline-block;
+	height: 64px;
+	margin-top: -8px;
+	overflow: hidden;
+
+	-webkit-mask-image: linear-gradient(transparent, white, white, white, transparent);
+	mask-image: linear-gradient(transparent, white, white, white, transparent);
+	mask-type: luminance;
+	mask-mode: alpha;
+}
+
+.word-slider {
+	display: inline-block;
+	margin: 0;
+	margin-top: 8px;
+	padding: 0;
+	list-style: none;
+
+	-webkit-animation-name: wordSlider;
+	animation-name: wordSlider;
+
+	-webkit-animation-timing-function: ease-out;
+	animation-timing-function: ease-out;
+
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+
+	-webkit-animation-duration: 10s;
+	animation-duration: 10s;
+
+	animation-fill-mode: forwards;
+}
+
+.word-slider-item {
+	display: block;
+	line-height: 56px;
+	text-align: left;
+}
+
+@-webkit-keyframes wordSlider {
+	0%,
+	20% {
+		transform: translateY(0%);
+	}
+
+	25%,
+	45% {
+		transform: translateY(-20%);
+	}
+
+	50%,
+	70% {
+		transform: translateY(-40%);
+	}
+
+	75%,
+	95% {
+		transform: translateY(-60%);
+	}
+
+	100% {
+		transform: translateY(-80%);
+	}
+}
+
+@keyframes wordSlider {
+	0%,
+	20% {
+		transform: translateY(0%);
+	}
+
+	25%,
+	45% {
+		transform: translateY(-20%);
+	}
+
+	50%,
+	70% {
+		transform: translateY(-40%);
+	}
+
+	75%,
+	95% {
+		transform: translateY(-60%);
+	}
+
+	100% {
+		transform: translateY(-80%);
+	}
+}
+
 @media only screen and (max-width: 767px) {
 	section.section-one {
 		padding-top: var(--grid-xxl);
@@ -798,6 +890,7 @@ section.dark-background {
 	.section-four .content-wrapper .decorative-line {
 		display: none;
 	}
+
 	.section-four .content-column {
 		margin-top: 0;
 	}
