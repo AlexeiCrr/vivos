@@ -767,7 +767,7 @@ section.dark-background {
 .word-slider-item {
 	display: block;
 	text-align: left;
-	padding-bottom: 10px;
+	padding-bottom: 25px;
 }
 
 @-webkit-keyframes wordSlider {
