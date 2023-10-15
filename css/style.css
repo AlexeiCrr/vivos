@@ -631,7 +631,7 @@ section.dark-background {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0.2;
+	opacity: .1;
 	z-index: 1;
 	background-size: cover;
 	background-position: center;
@@ -725,7 +725,7 @@ section.dark-background {
 /* --- Section One --- */
 
 .section-one__background {
-	background-image: url('../img/hero-image.jpg');
+	background-image: url('../img/hero-house-visit.jpeg');
 }
 
 .word-slider-container {
@@ -881,7 +881,7 @@ section.dark-background {
 /* --- Section Three --- */
 
 .section-three__background {
-	background-image: url('../img/hero-image.jpg');
+	background-image: url('../img/hero-children.jpeg');
 }
 
 /* --- Section Four --- */
