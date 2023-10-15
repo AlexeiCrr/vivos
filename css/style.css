@@ -840,6 +840,7 @@ section.dark-background {
 
 .section-two__content-icon {
 	display: block;
+	display: none;
 	height: min(30vh, 150px);
 	width: min(50vw, 200px);
 	margin-bottom: var(--grid-xl);
