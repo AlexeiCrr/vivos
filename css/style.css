@@ -716,7 +716,7 @@ section.dark-background {
 	.container {
 		padding: 0 var(--grid-m);
 	}
-
+	
 	.content-header {
 		margin-bottom: var(--grid-m);
 	}
@@ -729,10 +729,12 @@ section.dark-background {
 }
 
 .word-slider-container {
+	display: none;
 	display: inline-block;
-	height: 64px;
-	margin-top: -8px;
+	vertical-align: top;
+	height: 70px;
 	overflow: hidden;
+	margin-top: -10px;
 
 	-webkit-mask-image: linear-gradient(transparent, white, white, white, transparent);
 	mask-image: linear-gradient(transparent, white, white, white, transparent);
@@ -743,7 +745,7 @@ section.dark-background {
 .word-slider {
 	display: inline-block;
 	margin: 0;
-	margin-top: 8px;
+	margin-top: 10px;
 	padding: 0;
 	list-style: none;
 
@@ -764,9 +766,8 @@ section.dark-background {
 
 .word-slider-item {
 	display: block;
-	line-height: clamp(34px, 112%, 56px);
-	;
 	text-align: left;
+	padding-bottom: 10px;
 }
 
 @-webkit-keyframes wordSlider {
@@ -826,10 +827,6 @@ section.dark-background {
 @media only screen and (max-width: 767px) {
 	section.section-one {
 		padding-top: var(--grid-xxl);
-	}
-
-	.word-slider-item {
-		line-height: clamp(30px, 12vw, 48px);
 	}
 }
 
