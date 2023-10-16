@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Your code here
-
+document.addEventListener("DOMContentLoaded", function () {
 	const getAccordion = () => {
 		const accordionHeaders = document.querySelectorAll('.accordion-header');
 
@@ -34,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 
 	}
- // animate on scroll
 
+	// animate on scroll
 	const animateScroll = () => {
 		const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -70,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 				requestAnimationFrame(animateScroll);
 
-				if(body.classList.contains('no-scroll')) {
+				if (body.classList.contains('no-scroll')) {
 					body.classList.remove('no-scroll');
 					mobileMenuButton.classList.remove('mobile-menu-button--open');
 				}
@@ -80,16 +78,26 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	// mobile menu
+	const initMobileMenu = () => {
+		const mobileMenuButton = document.querySelector('.mobile-menu-button');
+		const mobileMenuLinks = document.querySelectorAll('.mobile-nav .nav-link');
 
-	const getMobileMenu = () => {
+		mobileMenuButton.addEventListener('click', () => toggleMobileMenu());
+		mobileMenuLinks.forEach(link => {
+			link.addEventListener('click', () => toggleMobileMenu());
+		});
+	}
+	const toggleMobileMenu = () => {
 		const mobileMenuButton = document.querySelector('.mobile-menu-button');
 		const mobileMenu = document.querySelector('.mobile-nav');
 
-		mobileMenuButton.addEventListener('click', () => {
-			mobileMenu.classList.toggle('mobile-nav--visible');
-			// rotate the svg inside mobile menu button
-			mobileMenuButton.classList.toggle('mobile-menu-button--open');
-		});
+		if( mobileMenu.classList.contains('mobile-nav--visible') ) {
+			mobileMenu.classList.remove('mobile-nav--visible');
+			mobileMenuButton.classList.remove('mobile-menu-button--open');
+		} else {
+			mobileMenu.classList.add('mobile-nav--visible');
+			mobileMenuButton.classList.add('mobile-menu-button--open');
+		}
 	}
 
 	// Highlight active section in navigation
@@ -117,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	}
 
-
 	// Prevent body scrolling when menu is opened on mobile
 	const preventBodyScroll = () => {
 		const body = document.querySelector('body');
@@ -132,8 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	getAccordion();
 	getLanguages();
 	animateScroll();
-	getMobileMenu();
-	// getMobileNavHighlight();
+	initMobileMenu();
 	getNavHighlight();
 	preventBodyScroll();
 });

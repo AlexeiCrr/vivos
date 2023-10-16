@@ -415,16 +415,34 @@ h6,
 	text-shadow: 0px 0px 15px #68D7EE66;
 }
 
-
 /* ### END TYPOGRAPHY ############################################# */
 
 
 /* ### MISC ELEMENTS ############################################# */
 
 .arrow-icon {
-	transform: rotate(180deg);
-	width: 15px;
-	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 25%;
+	width: 18px;
+	height: 10px;
+	clip-path: polygon(0% 0%, 100% 0%, 52% 100%, 48% 100%);
+	transition: all 0.3s ease-in-out;
+}
+
+.arrow-icon.open,
+.mobile-menu-button--open .arrow-icon,
+.accordion-item--expanded .arrow-icon {
+	clip-path: polygon(47% 0%, 53% 0%, 100% 100%, 0% 100%);
+}
+
+.arrow-icon-line {
+	display: block;
+	width: 100%;
+	height: 16.6%;
+	background-color: var(--golden-hour);
 }
 
 
@@ -581,15 +599,12 @@ h6,
 }
 
 .mobile-menu-button {
-	padding: var(--header-padding-v) 0;
+	padding: var(--header-padding-v) 40px;
+	margin: 0 -40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-}
-
-.mobile-menu-button--open .arrow-icon {
-	transform: rotate(0deg);
 }
 
 /* 1000px -> mobile nav is also for tablets */
@@ -716,7 +731,7 @@ section.dark-background {
 	.container {
 		padding: 0 var(--grid-m);
 	}
-	
+
 	.content-header {
 		margin-bottom: var(--grid-m);
 	}
@@ -944,16 +959,10 @@ section.dark-background {
 	padding: 12px 0;
 }
 
-.accordion-item--expanded .arrow-icon {
-	transform: translateY(-50%) rotate(0deg);
-}
-
 .footer .arrow-icon {
-	width: 15px;
 	position: absolute;
 	left: -40px;
-	top: 50%;
-	transform: translateY(-50%) rotate(180deg);
+	top: 38%;
 }
 
 
