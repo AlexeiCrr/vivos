@@ -91,9 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		const mobileMenuButton = document.querySelector('.mobile-menu-button');
 		const mobileMenu = document.querySelector('.mobile-nav');
 
-		mobileMenu.classList.toggle('mobile-nav--visible');
-		// rotate the svg inside mobile menu button
-		mobileMenuButton.classList.toggle('mobile-menu-button--open');
+		if( mobileMenu.classList.contains('mobile-nav--visible') ) {
+			mobileMenu.classList.remove('mobile-nav--visible');
+			mobileMenuButton.classList.remove('mobile-menu-button--open');
+		} else {
+			mobileMenu.classList.add('mobile-nav--visible');
+			mobileMenuButton.classList.add('mobile-menu-button--open');
+		}
 	}
 
 	// Highlight active section in navigation
