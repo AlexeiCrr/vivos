@@ -581,7 +581,8 @@ h6,
 }
 
 .mobile-menu-button {
-	padding: var(--header-padding-v) 0;
+	padding: var(--header-padding-v) 40px;
+	margin: 0 -40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
