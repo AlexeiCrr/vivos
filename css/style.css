@@ -30,6 +30,7 @@
 	--font-text: 'Georgia';
 	--font-title: 'Novecento';
 	--font-highlight: 'Argon';
+	--line-height: 20px;
 
 	/* --- grid --- */
 	--grid-base: 8px;
@@ -102,7 +103,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	font-size: 16px;
-	line-height: 20px;
+	line-height: var(--line-height);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: var(--background-secondary-dark);
@@ -275,6 +276,10 @@ textarea:not([rows]) {
 	margin-bottom: var(--grid-l);
 }
 
+.mt-xl {
+	margin-top: var(--grid-xl);
+}
+
 .mb-xl {
 	margin-bottom: var(--grid-xl);
 }
@@ -414,6 +419,15 @@ h6,
 	color: var(--hope-blue);
 	text-shadow: 0px 0px 15px #68D7EE66;
 }
+.fancy-bold {
+	font-family: 'Novecento', sans-serif;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 15px #68D7EE33;
+}
+
+.text-muted {
+	color: var(--text-muted);
+}
 
 /* ### END TYPOGRAPHY ############################################# */
 
@@ -484,10 +498,47 @@ h6,
 	top: -8px;
 }
 
+.cta {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+}
+.cta .arrow-icon {
+	position: absolute;
+	margin-left: -50px;
+	top: 38%;
+}
+
 @media only screen and (max-width: 767px) {
 	.decorative-line {
 		display: none;
 	}
+	
+	.cta .arrow-icon {
+		position: static;
+		margin-left: 0;
+		margin-right: var(--grid-m);
+		top: 0;
+	}
+}
+
+ul.fancy-list {
+	margin-top: var(--grid-m);
+	margin-bottom: var(--grid-m);
+	margin-left: var(--grid-m);
+}
+ul.fancy-list li {
+	position: relative;
+	margin-bottom: var(--grid-base);
+}
+ul.fancy-list li::before {
+	content: "";
+	position: absolute;
+	left: calc( var(--grid-m) * -1 );
+	top: 50%;
+	border-bottom: 1px solid var(--dusk-blue);
+	width: var(--grid-s);
 }
 
 /* ### END MISC ELEMENTS ############################################# */
