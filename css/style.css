@@ -275,6 +275,9 @@ textarea:not([rows]) {
 .mb-l {
 	margin-bottom: var(--grid-l);
 }
+.mt-l {
+	margin-top: var(--grid-l);
+}
 
 .mt-xl {
 	margin-top: var(--grid-xl);
@@ -539,6 +542,12 @@ ul.fancy-list li::before {
 	top: 50%;
 	border-bottom: 1px solid var(--dusk-blue);
 	width: var(--grid-s);
+}
+
+.callout {
+	padding: var(--grid-s) var(--grid-m);
+	color: var( --golden-hour);
+	border: 1px solid var(--golden-hour);
 }
 
 /* ### END MISC ELEMENTS ############################################# */
