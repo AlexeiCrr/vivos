@@ -422,6 +422,13 @@ h6,
 	color: var(--hope-blue);
 	text-shadow: 0px 0px 15px #68D7EE66;
 }
+.fancy-highlight.golden {
+	color: var(--golden-hour);
+	text-shadow: 0px 0px 15px #E8D09266;
+}
+.fancy-highlight.dark {
+	color: var(--sand-white);
+}
 .fancy-bold {
 	font-family: 'Novecento', sans-serif;
 	text-transform: uppercase;
@@ -430,6 +437,9 @@ h6,
 
 .text-muted {
 	color: var(--text-muted);
+}
+
+.text-highlight-1 {
 }
 
 /* ### END TYPOGRAPHY ############################################# */
@@ -730,6 +740,13 @@ section.dark-background {
 
 .content-wrapper.columns-2 {
 	grid-template-columns: 52fr 46fr;
+}
+
+.content-wrapper.columns-narrow-wide {
+	grid-template-columns: 4fr 6fr;
+}
+.content-wrapper.columns-wide-narrow {
+	grid-template-columns: 6fr 4fr;
 }
 
 .content-wrapper.columns-3 {
