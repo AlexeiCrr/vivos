@@ -4,12 +4,13 @@
 :root {
 	/* --- color variables --- */
 	--sand-white: #FBF7EA;
-	--golden-hour: #E8D092;
+	--golden-hour: #e8cf92;
 	--warm-bronze: #A28527;
 	--baby-poo: #786118;
 	--hope-blue: #68D7EE;
 	--dusk-blue: #1B5E6C;
 	--night-sky: #031A1F;
+	--background-golden-hour: rgba(232, 207, 146, .2);
 	--background-primary-dark: #04232A;
 	--background-primary-mid: #052930;
 	--background-primary-mid-95: rgba(5, 41, 48, .95);
@@ -242,6 +243,13 @@ textarea:not([rows]) {
 
 .text-right {
 	text-align: right;
+}
+
+.mt-0 {
+	margin-top: 0;
+}
+.mb-0 {
+	margin-bottom: 0;
 }
 
 .mr-16 {
@@ -559,17 +567,20 @@ ul.fancy-list {
 	margin-bottom: var(--grid-m);
 	margin-left: var(--grid-m);
 }
+	ul.fancy-list:first-child {
+		margin-top: 0;
+	}
 
 ul.fancy-list li {
 	position: relative;
-	margin-bottom: var(--grid-base);
+	margin-bottom: var(--grid-s);
 }
 
 ul.fancy-list li::before {
 	content: "";
 	position: absolute;
 	left: calc(var(--grid-m) * -1);
-	top: 50%;
+	top: 15px;
 	border-bottom: 1px solid var(--dusk-blue);
 	width: var(--grid-s);
 }
@@ -583,14 +594,28 @@ ul.fancy-list li::before {
 		left: calc(var(--grid-s) * -1);
 		width: var(--grid-base);
 		border-bottom-width: 2px;
-		top: 47%;
 	}
 }
 
 .callout {
 	padding: var(--grid-s) var(--grid-m);
+	color: var(--hope-blue);
+	border: 1px solid var(--hope-blue);
+}
+
+/* FORMS and BUTTONS */
+.button {
+	display: inline-block;
+	padding: var(--grid-s) var(--grid-m);
 	color: var(--golden-hour);
+	text-decoration: none;
+	background-color: var(--background-golden-hour);
 	border: 1px solid var(--golden-hour);
+	border-radius: 1px;
+	transition: background-color .3s ease-in-out;
+}
+.button:hover {
+	background-color: var(--baby-poo);
 }
 
 /* ### END MISC ELEMENTS ############################################# */
