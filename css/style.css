@@ -569,7 +569,7 @@ ul.fancy-list li::before {
 	content: "";
 	position: absolute;
 	left: calc(var(--grid-m) * -1);
-	top: 50%;
+	top: 15px;
 	border-bottom: 1px solid var(--dusk-blue);
 	width: var(--grid-s);
 }
@@ -583,7 +583,6 @@ ul.fancy-list li::before {
 		left: calc(var(--grid-s) * -1);
 		width: var(--grid-base);
 		border-bottom-width: 2px;
-		top: 47%;
 	}
 }
 
